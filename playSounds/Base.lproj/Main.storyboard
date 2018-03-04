@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,88 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="playSounds" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNs-ai-zQV">
+                                <rect key="frame" x="136" y="190" width="103" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Excellent!!"/>
+                                <connections>
+                                    <action selector="tapExcellent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GKd-39-mJy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leZ-Iw-NfN">
+                                <rect key="frame" x="156.5" y="270" width="62" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Good!"/>
+                                <connections>
+                                    <action selector="tapGood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aVn-uF-qWh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51g-Ic-9kW">
+                                <rect key="frame" x="159" y="350" width="57" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Bad…"/>
+                                <connections>
+                                    <action selector="tapBad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Or0-tT-6B4"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDO-gB-w7q">
+                                <rect key="frame" x="87.5" y="70" width="200" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azz-B1-3xe">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="3y8-ce-qaJ"/>
+                                            <constraint firstAttribute="height" constant="80" id="RAN-W1-IPy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <state key="normal" title="○">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCollect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7yz-EX-ZoV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgM-QY-G55">
+                                        <rect key="frame" x="100" y="0.0" width="100" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="aEi-z1-2DA"/>
+                                            <constraint firstAttribute="height" constant="80" id="m8R-3p-2xT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <state key="normal" title="×"/>
+                                        <connections>
+                                            <action selector="tapIncollect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="94O-0q-mJ6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="0Xx-6k-Orj"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XOp-UU-7VJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LDO-gB-w7q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0DW-BV-EZg"/>
+                            <constraint firstItem="TNs-ai-zQV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5xS-R3-w0n"/>
+                            <constraint firstItem="TNs-ai-zQV" firstAttribute="top" secondItem="LDO-gB-w7q" secondAttribute="bottom" constant="40" id="DH3-wq-TYA"/>
+                            <constraint firstItem="LDO-gB-w7q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Dgz-Dg-3BJ"/>
+                            <constraint firstItem="leZ-Iw-NfN" firstAttribute="top" secondItem="TNs-ai-zQV" secondAttribute="bottom" constant="40" id="RXP-0X-GSF"/>
+                            <constraint firstItem="leZ-Iw-NfN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aXv-kg-Tu1"/>
+                            <constraint firstItem="51g-Ic-9kW" firstAttribute="top" secondItem="leZ-Iw-NfN" secondAttribute="bottom" constant="40" id="dff-iv-Md9"/>
+                            <constraint firstItem="51g-Ic-9kW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nji-Jp-qe2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139.13043478260872" y="132.88043478260872"/>
         </scene>
     </scenes>
 </document>
