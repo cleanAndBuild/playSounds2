@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="playSounds" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNs-ai-zQV">
-                                <rect key="frame" x="136" y="190" width="103" height="40"/>
+                                <rect key="frame" x="156" y="232" width="103" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Excellent!!"/>
                                 <connections>
@@ -27,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leZ-Iw-NfN">
-                                <rect key="frame" x="156.5" y="270" width="62" height="40"/>
+                                <rect key="frame" x="176" y="312" width="62" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Good!"/>
                                 <connections>
@@ -35,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51g-Ic-9kW">
-                                <rect key="frame" x="159" y="350" width="57" height="40"/>
+                                <rect key="frame" x="179" y="392" width="57" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Bad…"/>
                                 <connections>
@@ -43,7 +44,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDO-gB-w7q">
-                                <rect key="frame" x="87.5" y="70" width="200" height="80"/>
+                                <rect key="frame" x="107" y="70" width="200" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azz-B1-3xe">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -77,24 +78,33 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XOp-UU-7VJ"/>
                                 </constraints>
                             </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ft5-Qs-asn">
+                                <rect key="frame" x="77" y="190" width="261" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LDO-gB-w7q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0DW-BV-EZg"/>
                             <constraint firstItem="TNs-ai-zQV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5xS-R3-w0n"/>
-                            <constraint firstItem="TNs-ai-zQV" firstAttribute="top" secondItem="LDO-gB-w7q" secondAttribute="bottom" constant="40" id="DH3-wq-TYA"/>
+                            <constraint firstItem="ft5-Qs-asn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="57" id="6H8-0u-7Aa"/>
                             <constraint firstItem="LDO-gB-w7q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Dgz-Dg-3BJ"/>
+                            <constraint firstItem="ft5-Qs-asn" firstAttribute="centerX" secondItem="TNs-ai-zQV" secondAttribute="centerX" id="ERG-bw-S2Q"/>
                             <constraint firstItem="leZ-Iw-NfN" firstAttribute="top" secondItem="TNs-ai-zQV" secondAttribute="bottom" constant="40" id="RXP-0X-GSF"/>
+                            <constraint firstItem="ft5-Qs-asn" firstAttribute="top" secondItem="LDO-gB-w7q" secondAttribute="bottom" constant="40" id="UVS-Dl-gcj"/>
                             <constraint firstItem="leZ-Iw-NfN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aXv-kg-Tu1"/>
                             <constraint firstItem="51g-Ic-9kW" firstAttribute="top" secondItem="leZ-Iw-NfN" secondAttribute="bottom" constant="40" id="dff-iv-Md9"/>
                             <constraint firstItem="51g-Ic-9kW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nji-Jp-qe2"/>
+                            <constraint firstItem="TNs-ai-zQV" firstAttribute="top" secondItem="ft5-Qs-asn" secondAttribute="bottom" constant="40" id="z6k-Br-VZg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="progressBar" destination="ft5-Qs-asn" id="jlD-Hd-8F7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.13043478260872" y="132.88043478260872"/>
+            <point key="canvasLocation" x="138.40000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

@@ -11,12 +11,14 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
+    @IBOutlet var progressBar: UIProgressView!
+    var point:Int = 0
+    
     var audioPlayer: AVAudioPlayer!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        progressBar.progress = 0.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,23 +27,34 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     //エクセレント
     @IBAction func tapExcellent(_ sender: Any) {
+        if (point >= 9) {
         self.audioPlayer = General.playSound(delegate: self, name: "excellent", type: "mp3")
+        }
     }
     //グッド
     @IBAction func tapGood(_ sender: Any) {
-        self.audioPlayer = General.playSound(delegate: self, name: "good", type: "mp3")
+        if (point >= 7) {
+            self.audioPlayer = General.playSound(delegate: self, name: "good", type: "mp3")
+        }
     }
     //バッド
     @IBAction func tapBad(_ sender: Any) {
+        if (point < 3) {
+            
         self.audioPlayer = General.playSound(delegate: self, name: "bad", type: "mp3")
+        }
     }
     //正解
     @IBAction func tapCollect(_ sender: Any) {
         self.audioPlayer = General.playSound(delegate: self, name: "correct", type: "wav")
+        point = point + 2
+        progressBar.progress = Float(point) / 10
     }
     //不正解
     @IBAction func tapIncollect(_ sender: Any) {
         self.audioPlayer = General.playSound(delegate: self, name: "incorrect", type: "mp3")
+        point = point - 1
+        progressBar.progress = Float(point) / 10
     }
     
 }
